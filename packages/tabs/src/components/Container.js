@@ -268,7 +268,7 @@ class Container extends React.Component {
         // Set initial selected index
         if (selectedIndex === null && selected !== null) {
             for (let i = 0; i < children.length; i++) {
-                if (children[i].key === selected) {
+                if (children[i]?.key === selected) {
                     selectedIndex = i;
 
                     this.setState({
@@ -285,7 +285,7 @@ class Container extends React.Component {
             for (let i = 0; i < children.length; i++) {
                 let child = children[i];
 
-                const isDisabled = ('disabled' in child.props) && child.props.disabled === true;
+                const isDisabled = ('disabled' in child?.props) && child?.props?.disabled === true;
 
                 if (isDisabled && this.state.disabled.indexOf(i) === -1) {
                     this.setState({
